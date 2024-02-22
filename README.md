@@ -37,6 +37,8 @@ Note Map is a simple yet powerful tool for quickly analyzing, organizing, and un
 - **Brainstorming**: Foster creativity by enabling brainstorming and idea generation.
 - **Note Interaction**: Communicate and engage with your notes for enhanced productivity.
 
+![Screenshot 2024-02-22](https://github.com/SudoACoder/note_map/assets/58640233/cae87ab9-b954-416a-9fa1-36a55044ae96)
+
 ## Usage
 
 1. **Select Directory:**
