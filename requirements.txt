@@ -1,0 +1,7 @@
+numpy==1.26.3
+matplotlib==3.8.2
+scikit-learn==1.4.0
+pypdf==4.0.2
+python-docx==1.1.0
+sentence-transformers==2.3.1
+openai==1.10.0
