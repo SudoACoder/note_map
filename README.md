@@ -20,6 +20,7 @@ Note Map is a simple yet powerful tool for quickly analyzing, organizing, and un
 
    ```
    pip install -r requirements.txt
+   #Optionally, set up your OpenAI API key by replacing the empty string in "OPENAI_API_KEY" with your actual API key in the code.
    ```
 
 4. Run the application:
@@ -35,6 +36,31 @@ Note Map is a simple yet powerful tool for quickly analyzing, organizing, and un
 - **Cross-File Format Support**: Supports analysis of PDFs, TXTs, DOCXs, and more (in future) for comprehensive insights.
 - **Brainstorming**: Foster creativity by enabling brainstorming and idea generation.
 - **Note Interaction**: Communicate and engage with your notes for enhanced productivity.
+
+## Usage
+
+1. **Select Directory:**
+   - Click on the "Browse" button to select a directory containing text files (TXT, PDF, DOCX).
+
+2. **Number of Clusters:**
+   - Specify the desired number of clusters for text file clustering.
+
+3. **File Type:**
+   - Choose the file type to include in the analysis (TXT, PDF, DOCX, or all).
+
+4. **Keyword Search:**
+   - Enter a keyword to search for within the selected text files.
+
+5. **Cluster Text Files:**
+   - Click on the "Cluster Text Files" button to initiate the clustering process.
+
+6. **Chat Interface:**
+   - Click on the "Chat" button to open a chat window and interact with the notes using a chatbot interface.
+
+## Notes
+
+- Ensure that your text files are properly formatted and accessible.
+- Be cautious while interacting with the chatbot interface, especially when dealing with sensitive information.
 
 ## Contribution
 
