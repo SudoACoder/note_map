@@ -2,6 +2,7 @@ from pypdf import PdfReader
 import docx
 import json
 from sentence_transformers import SentenceTransformer
+from ctransformers import AutoModelForCausalLM
 from openai import OpenAI
 import datetime
 
@@ -32,15 +33,21 @@ def load_settings():
                 settings = json.load(f)
                 OPENAI_API_KEY = settings.get("OPENAI_API_KEY", "")
                 model_type = settings.get("model_type", "small")
+                llm_model = settings.get("llm_model", "OpenAI api")
         except FileNotFoundError:
             OPENAI_API_KEY = ""
             model_type = "small"
-        return([OPENAI_API_KEY, model_type])
+            llm_model = "OpenAI api"
+        return([OPENAI_API_KEY, model_type, llm_model])
 
-def initialize_openai_and_embedding(OPENAI_API_KEY, model_type):
+def initialize_openai_and_embedding(OPENAI_API_KEY, model_type, llm_model):
              
-        if OPENAI_API_KEY:
+        if OPENAI_API_KEY and llm_model == "OpenAI api":
             client = OpenAI(api_key=OPENAI_API_KEY)
+        elif llm_model == "Tinyllama(Q5)":
+            client = AutoModelForCausalLM.from_pretrained("TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF", model_file="tinyllama-1.1b-chat-v1.0.Q5_K_M.gguf", model_type="llama", gpu_layers=0)
+        elif llm_model == "Llama2-7B(Q4)":
+            client = AutoModelForCausalLM.from_pretrained("TheBloke/Llama-2-7B-Chat-GGUF", model_file=" llama-2-7b-chat.Q4_K_M.gguf", model_type="llama", gpu_layers=0)
         else:
             client = None
 
