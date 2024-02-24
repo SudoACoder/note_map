@@ -8,7 +8,7 @@ Note Map is a simple yet powerful tool for quickly analyzing, organizing, and un
 - **Organize and Visualize**: Effortlessly organize and visualize information across various file formats.
 - **Cross-File Format Support**: Supports analysis of PDFs, TXTs, DOCXs, and more (in future) for comprehensive insights.
 - **Brainstorming**: Foster creativity by enabling brainstorming and idea generation.
-- **Note Interaction**: Communicate and engage with your notes for enhanced productivity.
+- **Note Interaction**: Communicate and engage with your notes for enhanced productivity.(OpenAI api, TinyLlama and Llama2 7B)
 
 ## Usage
 
@@ -34,7 +34,7 @@ https://github.com/SudoACoder/note_map/assets/58640233/8b961b4d-0845-49d3-94a0-8
    - Click on the "Chat" button to open a chat window and interact with the notes using a chatbot interface.
 
 ## To-Do List
-- Support for local llms
+- ~~Support for local llms~~ <sub>24 Feb 2024 : +TinyLlama and Llama2 7B</sub>
 - Conversation Log (+Long-Term Memory)
 - Auto Summarizer
 - Zero shot classification
