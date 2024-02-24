@@ -24,22 +24,25 @@ class TextClusteringGUI(QtWidgets.QMainWindow):
         self.chat_history = []
 
         # Load settings from file
-        self.OPENAI_API_KEY, self.model_type = load_settings()
-        self.Ai = AI(self.OPENAI_API_KEY, self.model_type)
+        self.OPENAI_API_KEY, self.model_type, self.llm_model = load_settings()
+        self.Ai = AI(self.OPENAI_API_KEY, self.model_type, self.llm_model)
 
         # GUI Components
         self.create_widgets()
 
-    def save_settings(self, API_KEY, Type):
+    def save_settings(self, API_KEY, Type, llm_model):
         settings = {
             "OPENAI_API_KEY": API_KEY.text(),
-            "model_type": Type.currentText()
+            "model_type": Type.currentText(),
+            "llm_model": llm_model.currentText()
         }
         with open("settings.json", "w") as f:
             json.dump(settings, f)
         self.OPENAI_API_KEY = API_KEY.text()
         self.model_type = Type.currentText()
-        self.client, self.model = initialize_openai_and_embedding(self.OPENAI_API_KEY, self.model_type)
+        self.llm_model = llm_model.currentText()
+
+        self.Ai = AI(self.OPENAI_API_KEY, self.model_type, self.llm_model)
 
     def open_settings(self):
         settings_window = QtWidgets.QDialog(self)
@@ -49,10 +52,14 @@ class TextClusteringGUI(QtWidgets.QMainWindow):
         model_type_combobox = QtWidgets.QComboBox()
         model_type_combobox.addItems(["small", "multilingual"])
         model_type_combobox.setCurrentText(self.model_type)
+        llm_model_combobox = QtWidgets.QComboBox()
+        llm_model_combobox.addItems(["OpenAI api", "Tinyllama(Q5)", "Llama2-7B(Q4)"])
+        llm_model_combobox.setCurrentText(self.llm_model)
         layout.addRow("OpenAI API Key (Optional):", api_key_entry)
         layout.addRow("Model Type:", model_type_combobox)
+        layout.addRow("LLM Model:", llm_model_combobox)
         save_button = QtWidgets.QPushButton("Save")
-        save_button.clicked.connect(lambda: self.save_settings(api_key_entry, model_type_combobox))
+        save_button.clicked.connect(lambda: self.save_settings(api_key_entry, model_type_combobox, llm_model_combobox))
         layout.addRow(save_button)
         settings_window.setLayout(layout)
         settings_window.exec()
@@ -163,7 +170,7 @@ class TextClusteringGUI(QtWidgets.QMainWindow):
         user_input = chat_input.text().strip()
         if user_input:
             try:
-                chatbot_response = self.Ai.chat_interaction(self.client, user_input, selected_files, self.chat_history)
+                chatbot_response = self.Ai.chat_interaction(user_input, selected_files, self.chat_history)
             except Exception as e:
                 QtWidgets.QMessageBox.critical(self, "Error", f"Failed to generate response: {e}")
                 chatbot_response = "Sorry, I couldn't understand that."
@@ -176,7 +183,6 @@ class TextClusteringGUI(QtWidgets.QMainWindow):
     def add_message_to_chat(self, chat_history, message, is_user=True):
         prefix = "You: " if is_user else "Chatbot: "
         chat_history.append(f"{prefix}{message}\n")
-
         self.chat_history.append({"role": "user" if is_user else "assistant", "content": message})
 
     def select_directory(self):
