@@ -6,3 +6,4 @@ python-docx==1.1.0
 sentence-transformers==2.3.1
 openai==1.10.0
 PyQt6==6.6.1
+ctransformers==0.2.27
