@@ -70,7 +70,7 @@ https://github.com/SudoACoder/note_map/assets/58640233/8b961b4d-0845-49d3-94a0-8
    
 ## Notes
 
-- Be cautious while interacting with the chatbot interface, especially when dealing with sensitive information.(OpenAi Api!)
+- You can run this tool completely locally to protect the privacy of your sensitive information and personal notes! Just select TinyLlama or Llama2 in the settings before starting a conversation! (downloads the model only for the first time)
 
 ## Contribution
 
