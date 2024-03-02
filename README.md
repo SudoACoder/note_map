@@ -21,16 +21,6 @@ NoteMap is a handy tool for analyzing, organizing, and finding patterns in text 
 5. **Cluster Text Files**: Start the grouping process.
 6. **Chat Interface**: Talk to your notes using a chat window.
 
-## To-Do List
-
-- [x] Local LLMS Support <sub>24 Feb 2024</sub>
-- [ ] Conversation Log (+Long-Term Memory)
-- [ ] Auto Summarizer
-- [ ] Zero-shot Classification
-- [ ] Named-entity Recognition (NER)
-- [ ] Layered Encryption for Cache Note Storage
-- [ ] Light Version
-
 ## Installation
 1. Clone the repository:
    ```
@@ -55,6 +45,16 @@ NoteMap is a handy tool for analyzing, organizing, and finding patterns in text 
 ## Notes
 
 - You can use NoteMap locally to keep your information private. Just select TinyLlama or Llama2 in settings before starting a chat! (model downloads only on first run)
+
+## To-Do List
+
+- [x] Local LLMS Support <sub>24 Feb 2024</sub>
+- [ ] Conversation Log (+Long-Term Memory)
+- [ ] Auto Summarizer
+- [ ] Zero-shot Classification
+- [ ] Named-entity Recognition (NER)
+- [ ] Layered Encryption for Cache Note Storage
+- [ ] Light Version
 
 ## Contribution
 
