@@ -1,6 +1,9 @@
-# Note Map
+<p align="center">
+   <img src="https://github.com/SudoACoder/note_map/assets/58640233/2002665d-aa10-48ff-88e6-cbffceaed7cb" alt="logo"/>
+   <h1 align="center">Note Map</h1>
+</p>
 
-NoteMap is a handy tool for analyzing, organizing, and finding patterns in text files. It works with PDFs, TXTs, and DOCXs. You can also brainstorm ideas and chat with your notes.
+a handy tool for analyzing, organizing, and finding patterns in text files. It works with PDFs, TXTs, and DOCXs. You can also brainstorm ideas and chat with your notes.
 
 ## Features
 
