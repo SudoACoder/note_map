@@ -1,81 +1,65 @@
 # Note Map
 
-Note Map is a simple yet powerful tool for quickly analyzing, organizing, and uncovering patterns and similarities within large volumes of textual files. With its intuitive interface and advanced features, Note Map empowers users to effortlessly visualize, search, and relate information across various file formats, including PDFs, TXTs, and DOCXs. Additionally, Note Map enables brainstorming, idea generation, and even communication with your notes!
+NoteMap is a handy tool for analyzing, organizing, and finding patterns in text files. It works with PDFs, TXTs, and DOCXs. You can also brainstorm ideas and chat with your notes.
 
 ## Features
 
-- **Textual Analysis**: Quickly analyze and uncover patterns within large volumes of textual files.
-- **Organize and Visualize**: Effortlessly organize and visualize information across various file formats.
-- **Cross-File Format Support**: Supports analysis of PDFs, TXTs, DOCXs, and more (in future) for comprehensive insights.
-- **Brainstorming**: Foster creativity by enabling brainstorming and idea generation.
-- **Note Interaction**: Communicate and engage with your notes for enhanced productivity.(OpenAI api, TinyLlama and Llama2 7B)
+- Text Analysis: Quickly find patterns in large volumes of textual files.
+- Organize and Visualize: Easily organize and see information from different file types.
+- Support for Different Formats: Works with PDFs, TXTs, DOCXs, and more in the future.
+- Brainstorming: Helps you come up with ideas.
+- Note Interaction: Chat with your notes to stay productive.
 
 ## Usage
 
-https://github.com/SudoACoder/note_map/assets/58640233/8b961b4d-0845-49d3-94a0-82e9e8c835b9
+[Demo](https://github.com/SudoACoder/note_map/assets/58640233/8b961b4d-0845-49d3-94a0-82e9e8c835b9)
 
-1. **Select Directory:**
-   - Click on the "Browse" button to select a directory containing text files (TXT, PDF, DOCX).
-
-2. **Number of Clusters:**
-   - Specify the desired number of clusters for text file clustering.
-
-3. **File Type:**
-   - Choose the file type to include in the analysis (TXT, PDF, DOCX, or all).
-
-4. **Keyword Search:**
-   - Enter a keyword to search for within the selected text files.
-
-5. **Cluster Text Files:**
-   - Click on the "Cluster Text Files" button to initiate the clustering process.
-
-6. **Chat Interface:**
-   - To chat with your notes, please enter your openai api key in settings.
-   - Click on the "Chat" button to open a chat window and interact with the notes using a chatbot interface.
+1. **Select Directory**: Pick a folder with your text files.
+2. **Number of Clusters**: Choose how many groups you want.
+3. **File Type**: Decide which file types to include.
+4. **Keyword Search**: Search for specific words.
+5. **Cluster Text Files**: Start the grouping process.
+6. **Chat Interface**: Talk to your notes using a chat window.
 
 ## To-Do List
-- [x] Support for local llms <sub>24 Feb 2024</sub>
+
+- [x] Local LLMS Support <sub>24 Feb 2024</sub>
 - [ ] Conversation Log (+Long-Term Memory)
 - [ ] Auto Summarizer
-- [ ] Zero shot classification
-- [ ] Named-entity recognition (NER)
-- [ ] Using layers of encryption to store notes in the cache
-- [ ] Light version
+- [ ] Zero-shot Classification
+- [ ] Named-entity Recognition (NER)
+- [ ] Layered Encryption for Cache Note Storage
+- [ ] Light Version
 
 ## Installation
-
 1. Clone the repository:
-
    ```
    git clone https://github.com/SudoACoder/note_map.git
    ```
 
 2. Navigate to the project directory:
-
    ```
    cd note_map
    ```
 
 3. Install dependencies:
-
    ```
    pip install -r requirements.txt
    ```
 
 4. Run the application:
-
    ```
    python main.py
    ```
    
 ## Notes
 
-- You can run this tool completely locally to protect the privacy of your sensitive information and personal notes! Just select TinyLlama or Llama2 in the settings before starting a conversation! (downloads the model only for the first time)
+- You can use NoteMap locally to keep your information private. Just select TinyLlama or Llama2 in settings before starting a chat! (model downloads only on first run)
 
 ## Contribution
 
-Contributions are welcome! If you have any ideas, suggestions, or bug fixes, feel free to open an issue or submit a pull request.
+Feel free to contribute! If you have ideas or find bugs, let us know by opening an issue or pull request.
 
 ## License
 
-This project is Released under the [MIT License](https://opensource.org/licenses/MIT)
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT)
