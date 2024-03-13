@@ -50,7 +50,7 @@ class TextClusteringGUI(QtWidgets.QMainWindow):
         layout = QtWidgets.QFormLayout()
         api_key_entry = QtWidgets.QLineEdit(self.OPENAI_API_KEY)
         model_type_combobox = QtWidgets.QComboBox()
-        model_type_combobox.addItems(["small", "multilingual"])
+        model_type_combobox.addItems(["default", "MiniLM-L12-v2"])
         model_type_combobox.setCurrentText(self.model_type)
         llm_model_combobox = QtWidgets.QComboBox()
         llm_model_combobox.addItems(["OpenAI api", "Tinyllama(Q5)", "Llama2-7B(Q4)"])
