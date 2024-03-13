@@ -32,11 +32,11 @@ def load_settings():
             with open("settings.json", "r") as f:
                 settings = json.load(f)
                 OPENAI_API_KEY = settings.get("OPENAI_API_KEY", "")
-                model_type = settings.get("model_type", "small")
+                model_type = settings.get("model_type", "default")
                 llm_model = settings.get("llm_model", "OpenAI api")
         except FileNotFoundError:
             OPENAI_API_KEY = ""
-            model_type = "small"
+            model_type = "default"
             llm_model = "OpenAI api"
         return([OPENAI_API_KEY, model_type, llm_model])
 
@@ -51,13 +51,13 @@ def initialize_openai_and_embedding(OPENAI_API_KEY, model_type, llm_model):
         else:
             client = None
 
-        if model_type == "small":
-            model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
-        elif model_type == "multilingual":
+        if model_type == "default":
+            model = SentenceTransformer("avsolatorio/GIST-small-Embedding-v0")
+        elif model_type == "MiniLM-L12-v2":
             model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
         else:
             # Default to small model if model_type is not recognized
-            model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+            model = SentenceTransformer("avsolatorio/GIST-small-Embedding-v0")
 
         
         return ([client, model])
